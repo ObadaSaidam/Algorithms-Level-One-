@@ -1,0 +1,72 @@
+#include <iostream>
+#include < cstdlib >
+using namespace std; 
+int readNumber ()
+{
+	int num = 0; 
+	cout << "please Enter  how many number You are needed ? "; 
+	cin >> num;
+	return num; 
+}
+void fillArray(int arr[],int num)
+{
+	for (int i = 0; i < num; i++)
+	{
+		arr[i] = rand() % 100; 
+	}
+}
+void printArray(int arr[] ,int num)
+{
+	for (int i = 0; i < num; i++)
+	{
+		cout << " The number     " << (i + 1) << "     =      " << arr[i]<<endl ; 
+	}
+}
+void MaxNumberArray(int arr[], int num)
+{
+	int max = arr[0]; 
+	for (int i = 0; i < num; i++)
+	{
+
+		if (arr[i] > max)
+			max = arr[i]; 
+
+	}
+	cout << "The MAx Number = " << max;
+}
+void primeNumber(int arr[], int num)
+{
+	bool isPrime = 0; 
+		int prime[100] = {};
+	for(int i=0 ; i<num;i++)
+	{
+		//int prime [100] = arr[i];
+		for (int a = 2;a < arr[i];a++)
+		{
+			if (arr[i] % a == 0)
+			{
+				isPrime = false;
+                   break;
+			}
+			isPrime = true ;
+
+		}
+		if (isPrime)
+			cout<< arr[i] << endl;
+	}
+}
+
+int main() {
+	srand((unsigned)time(NULL)); 
+	int num; 
+	num = readNumber(); 
+	int arr[50000]{}; 
+	fillArray( arr,  num); 
+	printArray(arr, num);
+
+	cout << "prime number = \n";
+	primeNumber(arr, num);
+
+
+	return 0; 
+}
