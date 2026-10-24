@@ -1,0 +1,60 @@
+#include <iostream>
+#include < cstdlib >
+using namespace std; 
+int readNumber ()
+{
+	int num = 0; 
+	cout << "please Enter  how many number You are needed ? "; 
+	cin >> num;
+	return num; 
+}
+void fillArray(int arr1[],int num)
+{
+	for (int i = 0; i < num; i++)
+	{
+		arr1[i] = rand() % 100; 
+	}
+}
+void printArray(int arr[] ,int num)
+{
+	for (int i = 0; i < num; i++)
+	{
+		cout << " The number     " << (i + 1) << "     =      " << arr[i]<<endl ; 
+	}
+}
+void sumArray (int arr1[], int arr2[] , int sumArr[], int num )
+{
+	for (int i = 0; i < num; i++)
+	{
+
+		sumArr[i] = arr1[i] + arr2[i]; 
+
+    }
+
+}
+void printSumArray(int sumArr[], int num)
+{
+	for (int i = 0; i < num; i++)
+	{
+		cout << " The number     " << (i + 1) << "     =      " << sumArr[i] << endl;
+	}
+}
+
+
+
+int main() {
+	srand((unsigned)time(NULL)); 
+	int num; 
+	num = readNumber(); 
+	int arr1[100], arr2[100],sumArr[100]; 
+	fillArray(arr1, num); 
+	fillArray(arr2, num);
+	printArray(arr1,  num); 
+	cout << "\n\n\n"; 
+	printArray(arr2,  num); 
+	sumArray(arr1, arr2, sumArr, num); 
+	cout << "\n\n\n";
+	printArray(sumArr, num);
+
+	return 0; 
+}
