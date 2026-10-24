@@ -1,0 +1,46 @@
+#include<iostream>
+#include <string>
+#include <cstdlib>
+using namespace std;
+int readNumberOFKeys() 
+{
+	int key = 0; 
+	cout << "Please Enter The Number Of keys You are Need ?  : :  "; 
+	cin >> key; 
+	return key; 
+
+}
+void printKeys ()
+{
+	int key = readNumberOFKeys(); 
+	
+	
+	for (int i = 1 ; i <=  key ; i++ )
+	{
+		cout << "Keys number " << i  << "      =   ";
+
+		for (int j = 1;j <= 4; j++)
+		{
+			for (int a = 1;a <= 4; a++)
+			{
+				int x = rand() % (90 - 65 + 1) + 65;
+				cout << char(x);
+
+			}
+			
+				cout << "-";
+		}
+		cout << endl; 
+	}
+
+
+}
+
+
+int main()
+{
+	srand((unsigned)time(NULL)); 
+
+	printKeys();
+	return 0;
+}
