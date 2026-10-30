@@ -1,0 +1,51 @@
+#include <iostream>
+#include <cstdlib>
+using namespace std ; 
+int readNumber ()
+{ 
+int number ; 
+cout << "Enter a Number of Array : ";
+cin >> number  ; 
+return number ;  
+}
+
+void FillArray (int arr [100], int number )
+{
+  for (int i = 0 ; i <number ; i++ )
+    {
+    cout << "please Enter The number " << (i+1) << "  ::  "  ; 
+    cin >> arr [i]; 
+    }
+
+}
+
+void swapNumber(int &a , int &s )
+{
+int temp = 0 ; 
+temp = a ; 
+a=s ; 
+s =temp ; 
+
+}
+void printShuffleNumber(int arr[], int number )
+{
+   for (int i = 0 ; i<number ;i++ )
+    {
+        swapNumber (arr[i],arr[rand()% 10]) ; 
+        cout <<arr[i]<<endl  ;
+    }
+}
+
+int main (){
+    srand ((unsigned)time(NULL)) ; 
+int number = readNumber(); 
+int arr [100]; 
+FillArray (arr , number ); 
+printShuffleNumber(arr, number ) ; 
+
+
+    return 0 ; 
+}
+
+
+
