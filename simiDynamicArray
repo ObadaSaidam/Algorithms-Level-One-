@@ -1,0 +1,59 @@
+#include <iostream>
+#include <cstdlib>
+using namespace std ; 
+bool AskfillArray () 
+{
+cout << "Do You Want store Number ? yes =1 No = 0   :: " ; 
+bool x ; 
+cin>>x ; 
+return x ; 
+}
+int readNumber ()
+{
+cout << "please Enter The Number " ; 
+int number ; 
+cin >> number ; 
+return number; 
+}
+void fillArray (int arr [] , int &len )
+{
+
+   while (true)
+   {
+      if (AskfillArray ())
+       {
+        int num = readNumber() ; 
+        arr[len]= num ; 
+        len++;
+
+       }
+       else 
+       return ;
+   }
+}
+void printArray (int arr [] , int len )
+{
+for (int i=0 ; i<len;i++)
+  {
+    cout << arr[i] << endl ; 
+  }
+
+}
+
+
+
+int main (){
+    srand ((unsigned)time(NULL)) ; 
+int len =0 ;
+int arr[100]; 
+
+fillArray(arr , len ) ;
+printArray(arr , len ) ;
+
+
+return 0 ; 
+
+}
+
+
+
